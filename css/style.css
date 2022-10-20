@@ -69,6 +69,11 @@ h6 {
 p {
   margin-bottom: 1rem;
 }
+div{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1,1fr);
+}
 
 code {
   /* Monospace font stack is used for our code blocks to make it look more like code */
@@ -88,11 +93,14 @@ code {
 }
 
 /* make each code card a flexbox column to align and justify content within it */
+/*  */
 .code-card {
   /* outline is like border, but on the outside of the box instead of inside */
   outline: 2px dashed var(--gin);
   outline-offset: -2px;
   transition: all 0.5s ease-in-out;
+  margin: 1em;
+  
 }
 
 .code-card .card-header {
@@ -101,6 +109,9 @@ code {
   color: var(--heliotrope);
   border: 2px solid var(--gin);
   transition: all 0.5s ease-in-out;
+  position: relative;
+  margin: -.5em .5em 0 .5em;
+  border-radius: .25em;
 }
 
 /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
@@ -110,7 +121,9 @@ code {
 }
 
 /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
-.code-card .code-block {}
+.code-card .code-block {
+  height: stretch;
+}
 
 .code-card pre {
   /* set styles to make it so code wraps in <pre> instead of overflowing */
@@ -125,6 +138,8 @@ code {
       rgba(232, 102, 236, 0.6) 100%);
   display: flex;
   align-items: center;
+  margin:1em;
+  
 }
 
 /* on <pre> click, select all contents so the code is highlighted */
@@ -136,15 +151,22 @@ code {
 @media screen and (min-width: 768px) {
 
   /* on tablets, set columns to only be 50% of the width and not grow */
-  .card-column {}
+  div {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2,1fr);
+
+  }
 
   /* select the last child to grow to full width if it has space to grow */
-  .card-column:last-child {}
-}
+
 
 /* media query for larger screens */
 @media screen and (min-width: 992px) {
-  header {}
-
-  .card-column {}
+  
+div {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+  }
 }
