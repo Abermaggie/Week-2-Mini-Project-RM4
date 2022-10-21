@@ -1,4 +1,3 @@
-/* color scheme sourced from http://khroma.co/generator/ */
 :root {
   --outer-space: #33393f;
   --bright-turquoise: #2aefcb;
@@ -151,7 +150,6 @@ code {
   background-image: linear-gradient(rgba(232, 102, 236, 0.3) 0%,
       rgba(232, 102, 236, 0.6) 100%);
   display: flex;
-  fl
   align-items: center;
   margin:1em;
   
